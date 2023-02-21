@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #1a1a1a;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.parent {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 16px;
+
+  perspective: 200px;
+  transform: rotateY(30deg);
+
+  transform-style: preserve-3d;
+
+  animation: parent 15s ease infinite;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: green;
+  border-radius: 16px;
+
+  animation: box 5s ease infinite, change-color 1s ease alternate infinite;
+}
+
+@keyframes box {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes change-color {
+  from {
+    background-color: red;
+  }
+
+  to {
+    background-color: blue;
+  }
+}
+
+@keyframes parent {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

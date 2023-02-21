@@ -19,11 +19,11 @@ body {
 .parent {
   width: 100px;
   height: 100px;
-  background-color: transparent;
+  background-color: grey;
   border-radius: 16px;
 
   perspective: 200px;
-  transform: rotateY(30deg);
+  transform: rotateY(40deg);
 
   transform-style: preserve-3d;
 }
@@ -38,7 +38,6 @@ body {
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease;
 }
 
 @keyframes box {
@@ -47,6 +46,7 @@ body {
   }
 
   to {
-    width: 150px;
+    width: 100px;
+    height: 200px;
   }
 }

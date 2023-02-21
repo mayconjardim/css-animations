@@ -17,30 +17,43 @@ body {
 .parent {
   width: 100px;
   height: 100px;
-  background-color: grey;
+  background-color: #ccc;
   border-radius: 16px;
   perspective: 200px;
-  transform: rotateY(40deg);
+  transform: rotateY(30deg);
   transform-style: preserve-3d;
+  animation: parent 15s ease infinite;
 }
 
 .box {
   width: 100px;
   height: 100px;
-  background: linear-gradient(blue, red);
+  background: green;
   border-radius: 16px;
-  animation-name: box;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: box 5s ease infinite, change-color 1s ease alternate infinite;
 }
 
 @keyframes box {
   from {
-    width: 0px;
+    transform: rotateX(0deg);
   }
   to {
-    width: 100px;
-    height: 200px;
+    transform: rotateX(360deg);
+  }
+}
+@keyframes change-color {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+@keyframes parent {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }/*# sourceMappingURL=style.css.map */
